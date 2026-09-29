@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Accueil.html">Luxury Shop</a>
+        </div>
+
+        <!-- Bouton Menu Burger pour mobile -->
+        <button class="burger-btn" id="burger-btn" aria-label="Menu">
+            ☰
+        </button>
+
+        <!-- Liste des liens de navigation -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Chaussures.html">Chaussures</a></li>
+            <li><a href="Vêtements.html">Vêtements</a></li>
+            <li><a href="Interieur.html">Intérieur/Accesoires</a></li>
+            <li id="Cad"><a href="Panier.html">🛒 Panier</a></li>
+        </ul>
+    </nav>
+</header>
+    <article>
+        <div class="contenair">
+            <div class="infos">
+                <h3>
+                    Besoin des articles d'habilement et de décoration? <br>
+                    Bienvenue chez Luxury Shop ici vous acheter des articles de qualité à des prix abordables </h3>
+                <button id="infos">Plus d'infos</button>
+            </div>
+            <div class="img">
+                <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2xvdGhlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Vêtements">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2xvdGhlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Vêtements">
+                <img src="https://plus.unsplash.com/premium_photo-1676823553364-a3626c995214?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJlZCUyMHNoZWV0JTIwYW5kJTIwY3VydGFpbnMlMjBvciUyMGRyYXBlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Intérieur">
+                <img id="chaussures" src="https://plus.unsplash.com/premium_photo-1744312220261-200237b9166b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2hvZXMlMjBmYXNoaW9ufGVufDB8fDB8fHww" alt="chaussures">
+            </div>
+            
+        </div>
+    </article>
+    
+    <script>
+        var btn=document.getElementById('infos');
+        btn.addEventListener('click',infos)
+        function infos(){
+            window.open('Infos.html');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', () => {
+      // Bascule la classe 'active' pour afficher ou masquer le menu
+      navLinks.classList.toggle('active');
+    });
+  }
+});
+    </script>
+
+    
+</body>
+</html>

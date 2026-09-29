@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intérieur</title>
+     <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+     <header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Accueil.html">Luxury Shop</a>
+        </div>
+
+        <!-- Bouton Menu Burger pour mobile -->
+        <button class="burger-btn" id="burger-btn" aria-label="Menu">
+            ☰
+        </button>
+
+        <!-- Liste des liens de navigation -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Chaussures.html">Chaussures</a></li>
+            <li><a href="Vêtements.html">Vêtements</a></li>
+            <li><a href="Interieur.html">Intérieur/Accesoires</a></li>
+            <li id="Cad"><a href="Panier.html">🛒 Panier</a></li>
+        </ul>
+    </nav>
+</header>
+  <main class="conteneur">
+        <h1>Nos rideaux chapeaux et sacs à main </h1>
+        <div id="liste-produits" class="grille-enfants">
+
+        </div>
+    </main>
+     <footer>
+      <p> ©Tous les droits réservés Luxury Shop</p>
+    </foote >
+    
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', () => {
+      // Bascule la classe 'active' pour afficher ou masquer le menu
+      navLinks.classList.toggle('active');
+    });
+  }
+});
+
+const interieur=[
+    {
+        id:1,
+        nom:"Sac à main",
+        prix:12,
+        image:"/Images/Linges/D38.jpeg",
+        alt:"image de sac"
+    },
+
+    {
+        id:2,
+        nom:"Sac à main",
+        prix:12,
+        image:"/Images/Linges/D39.jpeg",
+        alt:"image de sac"
+    },
+
+    {
+        id:3,
+        nom:"Sac à main",
+        prix:12,
+        image:"/Images/Linges/D40.jpeg",
+        alt:"image de sac"
+    },
+
+    {
+        id:4,
+        nom:"Sac à main",
+        prix:123,
+        image:"/Images/Linges/D41.jpeg",
+        alt:"image de sac"
+    },
+    {
+        id:5,
+        nom:"Sac à main",
+        prix:123,
+        image:"/Images/Linges/D42.jpeg",
+        alt:"image de sac"
+    },
+
+    {
+        id:6,
+        nom:"Sac à main",
+        prix:123,
+        image:"/Images/Linges/D43.jpeg",
+        alt:"image de sac"
+    },
+
+    {
+        id:7,
+        nom:"Sac à main",
+        prix:12,
+        image:"/Images/Linges/D44.jpeg",
+        alt:"image de sac"
+    },
+
+    {
+        id:8,
+        nom:"Sac à main",
+        prix:12,
+        image:"/Images/Linges/D45.jpeg",
+        alt:"image de sac"
+    }
+]
+
+  const conteneurProduits = document.getElementById("liste-produits");
+
+
+  function afficherProduits() {
+  conteneurProduits.innerHTML = "";
+
+  interieur.forEach(produit => {
+    const carte = `
+      <article class="carte-enfants">
+        <img src="${produit.image}" alt="${produit.alt}" width="600px">
+        <div class="contenu-enfants">
+          <h2 class="nom-enfants">${produit.nom}</h2>
+          <span class="prix">${produit.prix} FCA</span>
+          <button onclick="ajouterAuPanier(${produit.id})" class="btn-ajouter">Ajouter au panier</button>
+        </div>
+      </article>
+    `;
+
+    conteneurProduits.innerHTML += carte;
+  });
+};
+afficherProduits();
+  // Fonction d'ajout au panier au clic sur le bouton
+function ajouterAuPanier(idProduit) {
+  // 1. Récupérer le panier enregistré dans le localStorage (ou créer un tableau vide)
+  let panier = JSON.parse(localStorage.getItem('panier')) || [];
+
+  // 2. Retrouver l'article dans votre tableau "enfants"
+  const produitTrouve = interieur.find(article => article.id === idProduit);
+
+  if (!produitTrouve) {
+    console.error("Produit introuvable dans le tableau enfants");
+    return;
+  }
+
+  // 3. Vérifier si l'article est déjà dans le panier
+  const produitExistant = panier.find(item => item.id === idProduit);
+
+  if (produitExistant) {
+    // Si oui, on augmente la quantité
+    produitExistant.quantite += 1;
+  } else {
+    // Sinon, on copie les données du produit et on ajoute quantite: 1
+    panier.push({
+      id: produitTrouve.id,
+      nom: produitTrouve.nom,
+      prix: produitTrouve.prix,
+      image: produitTrouve.image,
+      quantite: 1
+    });
+  }
+
+  // 4. Sauvegarder dans le localStorage
+  localStorage.setItem('panier', JSON.stringify(panier));
+
+  alert(`${produitTrouve.nom} a été ajouté au panier !`);
+}
+    </script>
+</body>
+</html>

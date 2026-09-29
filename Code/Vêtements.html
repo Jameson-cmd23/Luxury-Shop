@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vêtements</title>
+     <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <header>
+         <nav class="navbar">
+            <div class="logo">
+            <a href="Accueil.html">Luxury Shop</a>
+            </div>
+
+            <!-- Bouton Menu Burger pour mobile -->
+            <button class="burger-btn" id="burger-btn" aria-label="Menu">
+                ☰
+            </button>
+
+            <!-- Liste des liens de navigation -->
+            <ul class="nav-links" id="nav-links">
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Chaussures.html">Chaussures</a></li>
+            <li><a href="Vêtements.html">Vêtements</a></li>
+            <li><a href="Interieur.html">Intérieur/Accesoires</a></li>
+            <li id="Cad"><a href="Panier.html">🛒 Panier</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="conteneur">
+        <h1>Nos Vêtements</h1>
+        <div id="liste-produits" class="grille-enfants">
+
+        </div>
+    </main>
+     <footer>
+      <p> ©Tous les droits réservés Luxury Shop</p>
+    </footer>
+    
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    const burgerBtn = document.getElementById('burger-btn');
+    const navLinks = document.getElementById('nav-links');
+
+        if (burgerBtn && navLinks) {
+            burgerBtn.addEventListener('click', () => {
+            // Bascule la classe 'active' pour afficher ou masquer le menu
+            navLinks.classList.toggle('active');
+        });
+    }
+    });
+    const vetements=[
+        {
+            id:1,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D1.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:2,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D2.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:3,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D3.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:4,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D4.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:5,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D5.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:6,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D6.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:7,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D7.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:8,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D8.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:9,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D9.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:10,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D10.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:11,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D11.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:12,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D12.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:13,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D13.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:14,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D14.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:15,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D15.jpeg",
+            alt:"image vêtements",
+        },
+
+
+        {
+            id:16,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D16.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:17,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D17.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:18,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D18.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:19,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D19.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:20,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D20.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:21,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D21.jpeg",
+            alt:"image vêtements",
+        },
+        {
+            id:22,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D22.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:23,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D23.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:24,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D24.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:25,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D25.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:26,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D26.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:27,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D27.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:28,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D28.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:29,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D29.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:30,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D30.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:31,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D31.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:32,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D32.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:33,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D33.jpeg",
+            alt:"image vêtements",
+        }
+        ,
+        
+
+        {
+            id:34,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D34.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:35,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D35.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:36,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D36.jpeg",
+            alt:"image vêtements",
+        },
+
+        {
+            id:37,
+            Nom:"Dames",
+            prix:123,
+            image:"/Images/Vetements/Dames/D37.jpeg",
+            alt:"image vêtements",
+        },
+
+    
+        //jeunes
+          {
+            id:46,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J1.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:47,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J2.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:48,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J3.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:49,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J4.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:50,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J5.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:51,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J7.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:52,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J8.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:53,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J9.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:54,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J10.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:55,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J11.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:56,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J12.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:57,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J13.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:58,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J14.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:59,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J15.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:60,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J16.jpeg",
+            alt:"image vêtements",
+        },
+          {
+            id:61,
+            Nom:"Jeunes",
+            prix:123,
+            image:"/Images/Vetements/Jeunes/J17.jpeg",
+            alt:"image vêtements",
+        },
+          
+
+
+    ]
+        
+    const conteneurProduits = document.getElementById("liste-produits");
+
+
+  function afficherProduits() {
+  conteneurProduits.innerHTML = "";
+
+  vetements.forEach(produit => {
+    const carte = `
+      <article class="carte-enfants">
+        <img src="${produit.image}" alt="${produit.alt}" width="600px">
+        <div class="contenu-enfants">
+          <h2 class="nom-enfants">${produit.Nom}</h2>
+          <span class="prix">${produit.prix} FCA</span>
+          <button onclick="ajouterAuPanier(${produit.id})" class="btn-ajouter">Ajouter au panier</button>
+        </div>
+      </article>
+    `;
+
+    conteneurProduits.innerHTML += carte;
+  });
+}
+
+
+afficherProduits();
+
+    function ajouterAuPanier(idProduit) {
+  // 1. Récupérer le panier enregistré dans le localStorage
+  let panier = JSON.parse(localStorage.getItem('panier')) || [];
+
+  // 2. Retrouver l'article dans le tableau vetements
+  const produitTrouve = vetements.find(article => article.id === idProduit);
+
+  if (!produitTrouve) {
+    console.error("Produit introuvable dans le tableau");
+    return;
+  }
+
+  // 3. Vérifier si l'article est déjà dans le panier
+  const produitExistant = panier.find(item => item.id === idProduit);
+
+  if (produitExistant) {
+    produitExistant.quantite += 1;
+  } else {
+    // 4. Ajouter l'article au panier en utilisant la bonne clé "Nom" (avec majuscule)
+    panier.push({
+      id: produitTrouve.id,
+      nom: produitTrouve.Nom, // <-- CORRECTION : "Nom" avec une majuscule
+      prix: produitTrouve.prix,
+      image: produitTrouve.image,
+      quantite: 1
+    });
+  }
+
+  // 5. Sauvegarder dans le localStorage
+  localStorage.setItem('panier', JSON.stringify(panier));
+
+  alert(`${produitTrouve.Nom} a été ajouté au panier !`); // <-- CORRECTION ici aussi
+}
+
+
+    </script> 
+</body>
+</html>

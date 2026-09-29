@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+     <header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Accueil.html">Luxury Shop</a>
+        </div>
+
+        <!-- Bouton Menu Burger pour mobile -->
+        <button class="burger-btn" id="burger-btn" aria-label="Menu">
+            ☰
+        </button>
+
+        <!-- Liste des liens de navigation -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Chaussures.html">Chaussures</a></li>
+            <li><a href="Vêtements.html">Vêtements</a></li>
+            <li><a href="Interieur.html">Intérieur/Accesoires</a></li>
+            <li id="Cad"><a href="Panier.html">🛒 Panier</a></li>
+        </ul>
+    </nav>
+</header>
+        <main>
+        <h2>Votre Panier</h2>
+        <div id="contenu-panier"></div>
+        <p>Total : <span id="total">0</span> CFA</p>
+
+        <!-- Bouton pour commander via WhatsApp -->
+        <div class="zone-commande">
+            <button id="btn-whatsapp" onclick="commanderWhatsApp()">
+                Commander via WhatsApp 📱
+            </button>
+        </div>
+    </main>
+        <script>
+          // Récupération des données sauvegardées depuis le localStorage
+let panier = JSON.parse(localStorage.getItem('panier')) || [];
+const conteneurPanier = document.getElementById('contenu-panier');
+const totalHTML = document.getElementById('total');
+
+function afficherPanier() {
+  if (panier.length === 0) {
+    conteneurPanier.innerHTML = "<p>Votre panier est vide.</p>";
+    if (totalHTML) totalHTML.textContent = "0";
+    return;
+  }
+
+  conteneurPanier.innerHTML = '';
+  let totalGeneral = 0;
+
+  panier.forEach((item, index) => {
+    const totalProduit = item.prix * item.quantite;
+    totalGeneral += totalProduit;
+
+    conteneurPanier.innerHTML += `
+      <div class="item-panier">
+        <img src="${item.image}" alt="${item.nom}" width="80">
+        <h4>${item.nom}</h4>
+        <p>Prix unitaire : ${item.prix} CFA</p>
+        <p>Quantité : ${item.quantite}</p>
+        <p>Sous-total : ${totalProduit} CFA</p>
+        <button onclick="supprimerDuPanier(${index})">Supprimer</button>
+      </div>
+    `;
+  });
+
+  if (totalHTML) {
+    totalHTML.textContent = totalGeneral;
+  }
+}
+
+// Fonction pour supprimer un article
+function supprimerDuPanier(index) {
+  panier.splice(index, 1);
+  localStorage.setItem('panier', JSON.stringify(panier));
+  afficherPanier();
+}
+
+afficherPanier();
+
+// --- FONCTION ENVOI WHATSAPP ---
+        function commanderWhatsApp() {
+          if (panier.length === 0) return;
+
+          // Replacez ce numéro par votre numéro WhatsApp (avec l'indicatif pays, ex: 242061234567 sans le +)
+          const numeroWhatsApp = "242065678203"; 
+
+          let message = "Bonjour Luxury Shop, je souhaite passer la commande suivante :\n\n";
+          let totalGeneral = 0;
+         
+
+          panier.forEach((item, index) => {
+            // Génère l'URL complète de l'image pour que WhatsApp génère l'aperçu visuel
+           const urlImageComplete = window.location.origin + item.image;
+            const sousTotal = item.prix * item.quantite;
+            totalGeneral += sousTotal;
+            message += `${index + 1}. *${item.nom}*\n`;
+            message += `${urlImageComplete}\n`;
+            message += `   • Quantité : ${item.quantite}\n`;
+            message += `   • Prix : ${item.prix} CFA\n`;
+            message += `   • Sous-total : ${sousTotal} CFA\n\n`;
+          });
+
+          message += `*TOTAL COMMANDE : ${totalGeneral} CFA*`;
+          
+
+          // Encodage du texte pour URL
+          const messageEncode = encodeURIComponent(message);
+          const urlWhatsApp = `https://wa.me/${242065678203}?text=${messageEncode}`;
+
+          // Redirection vers WhatsApp
+          window.open(urlWhatsApp);
+        }
+
+        afficherPanier();
+        document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', () => {
+      // Bascule la classe 'active' pour afficher ou masquer le menu
+      navLinks.classList.toggle('active');
+    });
+  }
+});
+
+        </script>
+</body>
+</html>

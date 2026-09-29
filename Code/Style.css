@@ -1,0 +1,913 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: -moz-linear-gradient(Right,#1a1a1a,#B3945B);
+    background: -webkit-linear-gradient(Left,#1a1a1a,#B3945B);
+    background: -o-linear-gradient(Right,#1a1a1a,#B3945B);
+    background: linear-gradient(Right,#1a1a1a,#B3945B);
+    padding-top: 70px;  
+    
+    
+    
+}
+
+/*navbar style*/
+
+/* ==========================================
+   STYLE DE LA NAVBAR RESPONSIVE
+   ========================================== */
+
+/* Navbar générale (PC & Tablettes) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 15px 30px;
+  position: relative;
+
+
+  
+    animation-name: nav;
+    animation-duration: 7s;
+    animation-timing-function: ease;
+    animation-delay: 8ms;
+    animation-iteration-count: 1;
+    animation-direction: alternate; 
+    
+    -webkit-animation-name: nav;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 8ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;   
+   
+    -moz-animation-name: nav;
+    -moz-animation-duration: 7s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-delay: 8ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: alternate;
+
+    -o-animation-name: nav;
+    -o-animation-duration: 7s;
+    -o-animation-timing-function: ease;
+    -o-animation-delay: 8ms;
+    -o-animation-iteration-count: 1;
+    -o-animation-direction: alternate;
+}
+
+.navbar .logo a {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+
+
+  
+}
+
+@-moz-keyframes nav{
+   0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+    
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+}
+@keyframes nav{
+    0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+  
+}
+@-webkit-keyframes nav{
+    0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+}
+@-o-keyframes nav{
+    0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+}
+
+
+/* Liste des liens */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e67e22; /* Couleur d'accentuation */
+}
+
+/* Bouton Burger (Caché sur ordinateur) */
+.burger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ==========================================
+   VERSION MOBILE (Écrans < 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block; /* Affiche le bouton burger */
+  }
+
+  .nav-links {
+    display: none; /* Cache le menu par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    gap: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  /* Classe ajoutée en JS pour afficher le menu */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1rem;
+  }
+}
+/*style panier*/
+
+#Cad a{
+    font-size: large;
+    margin-right: 12vmax;
+}
+#Cad a:hover{
+    font-size: 19px;
+}
+/*footer*/
+footer{
+    background-color: rgb(255, 248, 248);
+    backdrop-filter: blur(1px);
+    text-align: center;
+    margin: 20px;
+    
+}
+footer i{
+    font-size: x-large;
+    transition: transform 0.4s ease;
+    
+}
+footer i:hover{
+   transform: scale(1.3); 
+}
+
+.contenu-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+   margin-right: 10px;
+}
+ /* a*/
+ a{ text-decoration: none; color: black;}
+
+/*article accueil*/
+/*Boutton infos*/
+#infos ,#fos{
+    /* Style du bouton infos */
+    display: inline-block; /* S'assure que le bouton reste visible */
+    font-size: 1rem;
+    background-color: #25d366; /* Couleur de votre choix */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto 0 auto; /* Centre le bouton dans son conteneur */
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+
+#infos:hover,#fos:hover{
+    background-color: #1ebd56;
+    transform: scale(1.05);
+
+}
+
+
+@media (max-width: 768px) {
+  #infos {
+    width: 200px;          /* Le bouton s'étire sur toute la largeur de son conteneur */
+    max-width: 280px;     /* Limite la largeur max pour rester élégant */
+    padding: 12px 20px;   /* Taille de zone tactile confortable pour le pouce */
+    font-size: 1.05rem;
+    margin: 15px auto 0;  /* Centrage automatique sur mobile */
+  }
+}
+
+/*Accueil article*/
+.contenair{
+    /* Disposition de la section d'informations sur PC et tablette */
+    display: flex;
+    flex-direction: row; /* Aligne le texte à gauche et les images à droite sur grands écrans */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+/* Sur mobile */
+@media (max-width: 768px) {
+    .contenair {
+        flex-direction: column;
+    }
+    .infos {
+        align-items: center; /* Aligne le bouton au centre sur mobile */
+        text-align: center;
+    }
+}
+.img{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+
+    animation-name: img;
+    animation-duration: 7s;
+    animation-timing-function: ease;
+    animation-delay: 8ms;
+    animation-iteration-count: 3;
+    animation-direction: alternate; 
+    
+    -webkit-animation-name: img;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 8ms;
+    -webkit-animation-iteration-count: 3;
+    -webkit-animation-direction: alternate;   
+   
+    -moz-animation-name: img;
+    -moz-animation-duration: 7s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-delay: 8ms;
+    -moz-animation-iteration-count: 3;
+    -moz-animation-direction: alternate;
+
+    -o-animation-name: img;
+    -o-animation-duration: 7s;
+    -o-animation-timing-function: ease;
+    -o-animation-delay: 8ms;
+    -o-animation-iteration-count: 3;
+    -o-animation-direction: alternate;
+}
+@-moz-keyframes img{
+   0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+    
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+}
+@keyframes img{
+    0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+  
+}
+@-webkit-keyframes img{
+    0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+}
+@-o-keyframes img{
+    0%{
+    transform: translateX(200px);
+    opacity: 0;
+   }
+
+    100%{
+    transform: translateX(0);
+    opacity: 1;
+   }
+}
+
+
+.img img{
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.img img:hover{
+    transform: scale(1.03);
+}
+.infos{
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-bottom: 50px;
+    font-size:1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Force le bouton à se placer sous le texte <h3> */
+    align-items: center;  /* Centre horizontalement le titre et le bouton */
+    text-align: center;   /* Centre le texte du titre <h3> */
+    margin-bottom: 20px;
+
+    animation-name: infos;
+    animation-duration: 7s;
+    animation-timing-function: ease;
+    animation-delay: 9mss;
+    animation-iteration-count: 1;
+    animation-direction: alternate; 
+    
+    -webkit-animation-name: infos;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 9ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;   
+   
+    -moz-animation-name: infos;
+    -moz-animation-duration: 7s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-delay: 9ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: alternate;
+
+    -o-animation-name: infos;
+    -o-animation-duration: 7s;
+    -o-animation-timing-function: ease;
+    -o-animation-delay: 9ms;
+    -o-animation-iteration-count: 1;
+    -o-animation-direction: alternate;
+   
+}
+@-moz-keyframes infos{
+   0%{
+    transform: translateY(200px);
+    opacity: 0;
+   }
+    100%{
+    transform: translateY(0);
+    opacity: 1;
+   }
+}
+@keyframes infos{
+    0%{
+    transform: translateY(200px);
+    opacity: 0;
+   }
+    100%{
+    transform: translateY(0);
+    opacity: 1;
+   }
+  
+}
+@-webkit-keyframes infos{
+    0%{
+    transform: translateY(200px);
+    opacity: 0;
+   }
+    100%{
+    transform: translateY(0);
+    opacity: 1;
+   }
+}
+@-o-keyframes infos{
+    0%{
+    transform: translateY(200px);
+    opacity: 0;
+   }
+    100%{
+    transform: translateY(-0);
+    opacity: 1;
+   }
+}
+.infos h3{
+    transition: transform 0.3s ease;
+
+}
+.infos h3:hover{
+    transform: translateY(-10px);
+}
+.infos h3{
+    display: inline-block;
+    line-height: 40px;
+}
+.infos button{
+    position: relative;
+    top: 20%;
+    left: 20%;
+    transform: translate(-20%,-20%);
+}
+
+/*infos style*/
+.article{
+    background-color: rgb(224, 196, 196);
+    display: flex;
+    font-size: 15px;
+    margin: 40px;
+    padding: 40px;
+   
+}
+.article a{
+    color: #B3945B;
+    transition: transform 0.8s ease , text-shadow 0.7s ease;
+}
+.article a:hover{
+    transform: scale(1.9);
+    text-shadow: 0 4px 10px  #1a1a1a;
+}
+
+#A1{
+    display: inline-block;
+    margin: 0px 50px;
+    padding: 0px 50px;
+    border-right: 3px solid black;
+   
+}
+#A1 p ,#A2 p{
+     transition: transform 0.5s ease;
+}
+#A1 p:hover,#A2 p:hover{
+    transform: translateX(30px);
+    transform: scaleY(1.1);
+}
+#fos{
+    margin-bottom: 80px;
+    border-radius: 70px;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    transform: translate(-35%,-35%);    
+}
+header h1{
+    margin-top: 0px;
+    text-align: center;
+}
+@media (max-width: 992px) {
+  .contenair {
+    flex-direction: column; /* Le texte passe au-dessus des images */
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .infos h3 {
+    font-size: 1.3rem;
+  }
+
+  .img {
+    width: 100%;
+  }
+  #infos:hover{
+    transform: translateY(2px);
+  }
+}
+
+/* Petits écrans (Smartphones < 576px) */
+@media (max-width: 576px) {
+  .contenair {
+    padding: 0 15px;
+  }
+
+  .infos h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Sur téléphone, passage des images sur une seule colonne */
+  .img {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .img img {
+    height: 180px;
+  }
+  #infos:hover{
+    transform: translateY(2px);
+  }
+}
+
+
+/*Page chaussures*/
+.conteneur{
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 auto;
+            margin-bottom: 120px;
+        }
+        h1{
+            text-align: center;
+            color: #333;
+            
+        animation-name: img;
+        animation-duration: 7s;
+        animation-timing-function: ease;
+        animation-delay: 8ms;
+        animation-iteration-count: 1;
+        animation-direction: alternate; 
+    
+        -webkit-animation-name: img;
+        -webkit-animation-duration: 7s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-delay: 8ms;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-direction: alternate;   
+   
+        -moz-animation-name: img;
+        -moz-animation-duration: 7s;
+        -moz-animation-timing-function: ease;
+        -moz-animation-delay: 8ms;
+        -moz-animation-iteration-count: 1;
+        -moz-animation-direction: alternate;
+
+        -o-animation-name: img;
+        -o-animation-duration: 7s;
+        -o-animation-timing-function: ease;
+        -o-animation-delay: 8ms;
+        -o-animation-iteration-count: 1;
+        -o-animation-direction: altern
+        }
+        /*grilles de produits respoonsive*/
+        .grille-enfants{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .carte-enfants{
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0,0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+
+        }
+        .carte-enfants:hover{
+            transform: translateY(-5px);
+        }
+        /* Stylisation image*/
+        .carte-enfants img{
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+
+        animation-name: img;
+        animation-duration: 7s;
+        animation-timing-function: ease;
+        animation-delay: 8ms;
+        animation-iteration-count: 1;
+        animation-direction: alternate; 
+    
+        -webkit-animation-name: img;
+        -webkit-animation-duration: 7s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-delay: 8ms;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-direction: alternate;   
+   
+        -moz-animation-name: img;
+        -moz-animation-duration: 7s;
+        -moz-animation-timing-function: ease;
+        -moz-animation-delay: 8ms;
+        -moz-animation-iteration-count: 1;
+        -moz-animation-direction: alternate;
+
+        -o-animation-name: img;
+        -o-animation-duration: 7s;
+        -o-animation-timing-function: ease;
+        -o-animation-delay: 8ms;
+        -o-animation-iteration-count: 1;
+        -o-animation-direction: alternate;
+        }
+
+    @-moz-keyframes img{
+        0%{
+            transform: translateX(200px);
+            opacity: 0;
+        }
+    
+         100%{
+            transform: translateX(0);
+             opacity: 1;
+         }
+    }
+    @keyframes img{
+        0%{
+         transform: translateX(200px);
+         opacity: 0;
+        }
+
+        100%{
+            transform: translateX(0);
+             opacity: 1;
+        }
+  
+    }
+    @-webkit-keyframes img{
+        0%{
+            transform: translateX(200px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0);
+             opacity: 1;
+        }
+    }
+    @-o-keyframes img{
+        0%{
+            transform: translateX(200px);
+            opacity: 0;
+        }
+
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+        .contenu-enfants{
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .nom-enfants{
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            color: #222;                                                                                                                                        ;
+        }
+        .prix{
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2a9d8F;
+            margin-bottom: 15px;
+        }
+        .btn-ajouter{
+            background-color: #2a9d8F;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: auto;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .btn-ajouter:hover{
+            background-color: #218376;
+        }
+
+        /* ==========================================
+   STYLE DE LA PAGE PANIER
+   ========================================== */
+
+/* Structure générale du conteneur panier */
+#contenu-panier {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* Carte pour chaque article du panier */
+.item-panier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-panier:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Image du produit */
+.item-panier img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+/* Titre du produit */
+.item-panier h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* Textes et informations (prix, quantité) */
+.item-panier p {
+  margin: 0 15px;
+  font-size: 0.95rem;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* Bouton de suppression */
+.item-panier button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.item-panier button:hover {
+  background-color: #e03838;
+}
+
+/* Section Récapitulatif du Total */
+h2 {
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+}
+
+p:has(#total) {
+  text-align: center;
+  max-width: 800px;
+  margin: 25px auto;
+  padding: 15px 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1a252f;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+#total {
+  color: #e67e22; /* Couleur dorée/orange pour le prix total */
+  font-size: 1.5rem;
+}
+
+/* Adaptabilité pour mobiles et petites tablettes */
+@media (max-width: 600px) {
+  .item-panier {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-panier h4 {
+    margin-left: 0;
+  }
+
+  .item-panier p {
+    margin: 0;
+  }
+
+  .item-panier button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+/* ==========================================
+   BOUTON DE COMMANDE WHATSAPP RESPONSIVE
+   ========================================== */
+
+/* Zone du bouton */
+.zone-commande {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/* Style principal du bouton */
+#btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px; /* Largeur maximale pour grands écrans */
+  padding: 16px 24px;
+  background-color: #25d366; /* Vert officiel WhatsApp */
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 50px; /* Forme arrondie moderne */
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s ease;
+}
+
+/* Survol de la souris */
+#btn-whatsapp:hover {
+  background-color: #1ebd56;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+}
+
+/* Effet d'enfoncement au clic */
+#btn-whatsapp:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+/* Adaptation pour téléphones mobiles */
+@media (max-width: 600px) {
+  .zone-commande {
+    padding: 0 20px;
+  }
+
+  #btn-whatsapp {
+    max-width: 100%; /* S'étend sur toute la largeur sur mobile */
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+}

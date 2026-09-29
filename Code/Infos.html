@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infos</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    
+        /* Le conteneur principal prend tout l'espace restant */
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background-color: rgb(224, 196, 196);
+            padding: 20px 10px;
+            margin-top: auto; /* Force le footer à pousser vers le bas */
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        animation-name: fos;
+        animation-duration: 9s;
+        animation-timing-function: ease;
+        animation-delay: 9ms;
+        animation-iteration-count: 1;
+        animation-direction: alternate; 
+    
+        -webkit-animation-name: fos;
+        -webkit-animation-duration: 7s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-delay: 9ms;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-direction: alternate;   
+   
+        -moz-animation-name: fos;
+        -moz-animation-duration: 7s;
+        -moz-animation-timing-function: ease;
+        -moz-animation-delay: 9ms;
+        -moz-animation-iteration-count: 1;
+        -moz-animation-direction: alternate;
+
+        -o-animation-name: fos;
+        -o-animation-duration: 7s;
+        -o-animation-timing-function: ease;
+        -o-animation-delay: 9mss;
+        -o-animation-iteration-count: 1;
+        -o-animation-direction: alternate;
+
+    }
+    @-moz-keyframes fos{
+        0%{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+     100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    }
+    @keyframes fos{
+        0%{
+        transform: translateY(200px);
+        opacity: 0;
+        }
+        100%{
+        transform: translateY(0);
+        opacity: 1;
+        }
+  
+    }
+    @-webkit-keyframes fos{
+        0%{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+        100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    }
+    @-o-keyframes fos{
+        0%{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+     100%{
+        transform: translateY(-0);
+     opacity: 1;
+    }
+}
+header h1 {
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+
+    /* Style par défaut pour Mobile : l'un sous l'autre (colonne) */
+    .article {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .article article {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Centrage parfait du bouton dans toutes les versions */
+    #fos {
+        display: block;
+        margin: 30px auto; /* Centrage horizontal automatique */
+        padding: 12px 24px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .contenu-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+    /* Styles pour la version Tablette et PC (à partir de 768px) */
+    @media (min-width: 768px) {
+        .article {
+            flex-direction: row; /* Aligne les articles côte à côte */
+            align-items: stretch; /* Même hauteur pour les deux */
+        }
+
+        .article article {
+            flex: 1; /* Même largeur pour les deux */
+        }
+
+      .contenu-footer {
+                flex-direction: row;
+                justify-content: space-around;
+                text-align: left;
+            }
+        
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Informations sur Luxury Shop</h1>
+    </header>
+    <div class="article">
+        <article id="A1">
+            <h2>Qui Sommes-Nous ?</h2>
+            <p> Luxury Shop est une boutique d'habillement pour hommes femmes et enfants, opérant aussi dans la décoration d'intérieur notre objectif est de proposer aux congolais des articles de qualité à des prix abordables dont le but de satisfaire une clientel où la qualité prime.
+                notre boutique se situe à Ouesso mais livre partout dans la république du Congo car notre ambition est que chaque congolais puisse profiter de la bonne qualité peu importe le lieu parce que Chez Luxury Shop votre satisfaction est notre priorité et avec un prix moyen de 7 416 FCFA par article alors n'hesitez passez votre commande et profitez de la meilleur qualité.
+             Aussi nous faisons des réductions en cas d'achats de plusieurs articles lors de la livraison donc vous passez votre commande quand ? Pour toute collaboration ou si vous voulez nous contacter regardez en bas de la page et contactez nous nous repondrons dans les plus brèves delai et nous en serons ravis     
+            </p>
+        </article>
+        <Article id="A2">
+            <h2>Ce que Nous Proposons</h2>
+            <p> Luxury Shop possède un large catalogue de  <a href="Vêtements.html">vêtements</a> des parents en passant par les jeunes et les enfants , des draps et rideaux faites avec des tissus de qualité pour un <a href="Interieur.html">intérieur</a> de haut gamme , des <a href="Chaussures.html">chaussures</a> commes des paires debasket pour les jeunes ou les talons pour les dames
+                nous n'avons pas oublier  les <a href="Vêtements.html">Chapeaux</a> pour ajouter de l'élegance et du style à votre look
+            </p>
+        </Article>
+    </div>
+    <button id="fos">Accueil</button>
+    <footer>
+        <div class="contenu-footer">
+
+        <div class="suivi">
+            <h3>Suivez-nous sur</h3>
+            <a href="https://www.tiktok.com/@nzikou142" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <div class="contact">
+            <h3>Contactez-nous pour toute collaboration</h3>
+            <a href="https://wa.me/24206?text=Bonjour%20Je%20vous%20contactez%Pour%20une%20collaboration"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:infos@luxuryshop.com"><i class="fas fa-envelope"></i></a>
+            <p>Téléphone: +242 06 567 8203</p>
+        </div>
+
+        <div class="horaire">
+            <h3>Nos Horaires pour vos commandes</h3>
+            <p>Lundi - Vendredi: 7h00 - 18h00</p>
+            <p>Samedi: 07h00 - 16h00</p>
+            <p>Dimanche: Fermé</p>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+           var btn=document.querySelector('button');
+        btn.addEventListener('click',infos)
+        function infos(){
+            window.open('Accueil.html');
+        }
+    </script>
+</body>
+

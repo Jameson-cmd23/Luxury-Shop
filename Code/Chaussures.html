@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaussures</title>
+     <link rel="stylesheet" href="Style.css">
+   <script src="Shop.js"></script>    
+</head>
+</head>
+<body>
+     <header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Accueil.html">Luxury Shop</a>
+        </div>
+
+        <!-- Bouton Menu Burger pour mobile -->
+        <button class="burger-btn" id="burger-btn" aria-label="Menu">
+            ☰
+        </button>
+
+        <!-- Liste des liens de navigation -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Chaussures.html">Chaussures</a></li>
+            <li><a href="Vêtements.html">Vêtements</a></li>
+            <li><a href="Interieur.html">Intérieur/Accesoires</a></li>
+            <li id="Cad"><a href="Panier.html">🛒 Panier</a></li>
+        </ul>
+    </nav>
+</header>
+    <main class="conteneur">
+        <h1>Nos Chaussures</h1>
+        <div id="liste-produits" class="grille-enfants">
+
+        </div>
+    </main>
+    <footer>
+      <p> ©Tous les droits réservés Luxury Shop</p>
+    </footer>
+    <script>
+        const enfants=[
+            {id:1,nom:"Enfants",prix:8000,image:"/Images/Chaussures/Enfants/Chaussenf1.jpeg",alt:"Image chaussure"},
+            {id:2,nom:"Enfants",prix:8000,image:"/Images/Chaussures/Enfants/Chaussenf2.jpeg",alt:"Image chaussure"},
+            {id:3,nom:"Enfants",prix:7000,image:"/Images/Chaussures/Enfants/Chaussenf3.jpeg",alt:"Image chaussure"},
+            {
+                id:4,
+                nom:"Enfants",
+                prix:7000,
+                image:"/Images/Chaussures/Enfants/Chaussenf4p.jpeg",
+                alt:"Image chaussure"
+            }
+            ,
+
+              {
+                id:5,
+                nom:"Enfants",
+                prix:7000,
+                image:"/Images/Chaussures/Enfants/Chaussenf5.jpeg",
+                alt:"Image chaussure"
+            }
+                ,
+              {
+                id:6,
+                nom:"Enfants",
+                prix:7000,
+                image:"/Images/Chaussures/Enfants/Chaussenf6p.jpeg",
+                alt:"Image chaussure"
+            }
+            ,
+
+              {
+                id:7,
+                nom:"Enfants",
+                prix:7000,
+                image:"/Images/Chaussures/Enfants/Chaussenf7.jpeg",
+                alt:"Image chaussure"
+            }
+            ,
+
+              {
+                id:8,
+                nom:"Enfants",
+                prix:9000,
+                image:"/Images/Chaussures/Enfants/Chaussenf8.jpeg",
+                alt:""
+            }
+            ,
+                {
+                id:9,
+                nom:"Enfants",
+                prix:5000,
+                image:"/Images/Chaussures/Enfants/Chaussenf9.jpeg",
+                alt:""
+            }
+            ,
+                {
+                id:10,
+                nom:"Enfants",
+                prix:8000,
+                image:"/Images/Chaussures/Enfants/Chaussenf10.jpeg",
+                alt:""
+            }
+            ,
+
+              {
+                id:11,
+                nom:"Enfants",
+                prix:8000,
+                image:"/Images/Chaussures/Enfants/Chaussenf11.jpeg",
+                alt:"Image chaussure"
+            },
+
+              {
+                id:12,
+                nom:"Enfants",
+                prix:9000,
+                image:"/Images/Chaussures/Enfants/Chaussenf12.jpeg",
+                alt:"Image chaussure"
+            },
+
+              {
+                id:13,
+                nom:"Enfants",
+                prix:9000,
+                image:"/Images/Chaussures/Enfants/Chaussenf13.jpeg",
+                alt:"Image chaussure"
+            },
+
+              {
+                id:14,
+                nom:"Enfants",
+                prix:9000,
+                image:"/Images/Chaussures/Enfants/Chaussenf14p.jpeg",
+                alt:"Image chaussure"
+            },
+
+              {
+                id:15,
+                nom:"Enfants",
+                prix:8000,
+                image:"/Images/Chaussures/Enfants/chaussenf15.jpeg",
+                alt:"Image chaussure"
+            },
+
+            //jeunes
+               {
+                id:16,
+                nom:"Jeunes",
+                prix:12000,
+                image:"/Images/Chaussures/jeunes/J1.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:17,
+                nom:"Jeunes",
+                prix:9000,
+                image:"/Images/Chaussures/jeunes/J2.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:18,
+                nom:"Jeunes",
+                prix:9000,
+                image:"/Images/Chaussures/jeunes/J3p.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:19,
+                nom:"Jeunes",
+                prix:9000,
+                image:"/Images/Chaussures/jeunes/J4.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:20,
+                nom:"Jeunes",
+                prix:10000,
+                image:"/Images/Chaussures/jeunes/J5p.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:21,
+                nom:"Jeune",
+                prix:10000,
+                image:"/Images/Chaussures/jeunes/J6.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:23,
+                nom:"Jeunes",
+                prix:11000,
+                image:"/Images/Chaussures/jeunes/J8.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:24,
+                nom:"Jeunes",
+                prix:12000,
+                image:"/Images/Chaussures/jeunes/J9p.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:25,
+                nom:"Jeunes",
+                prix:11000,
+                image:"/Images/Chaussures/jeunes/J10.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:26,
+                nom:"Jeunes",
+                prix:11000,
+                image:"/Images/Chaussures/jeunes/J11.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:27,
+                nom:"Jeunes",
+                prix:11000,
+                image:"/Images/Chaussures/jeunes/J12.jpeg",
+                alt:"Image chaussure"
+            },
+
+               {
+                id:28,
+                nom:"Jeunes",
+                prix:11000,
+                image:"/Images/Chaussures/jeunes/J13.jpeg",
+                alt:"Image chaussure"
+            },
+               {
+                id:29,
+                nom:"Jeunes",
+                prix:11000,
+                image:"/Images/Chaussures/jeunes/J14.jpeg",
+                alt:"Image chaussure"
+            },
+            //dames
+             {
+                id:30,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D1.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:31,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D2.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:32,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D3.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:33,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D4.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:34,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D5.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:35,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D6.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:36,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D7.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:37,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D8.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:38,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D9.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:39,
+                nom:"Dames",
+                prix:9000,
+                image:"/Images/Chaussures/dames/D10.jpeg",
+                alt:"Image chaussure"
+            },
+
+             {
+                id:40,
+                nom:"Dames",
+                prix:8000,
+                image:"/Images/Chaussures/dames/D11.jpeg",
+                alt:"Image chaussure"
+            }
+
+        ]
+        const conteneurProduits = document.getElementById("liste-produits");
+
+
+  function afficherProduits() {
+  conteneurProduits.innerHTML = "";
+
+  enfants.forEach(produit => {
+    const carte = `
+      <article class="carte-enfants">
+        <img src="${produit.image}" alt="${produit.alt}">
+        <div class="contenu-enfants">
+          <h2 class="nom-enfants">${produit.nom}</h2>
+          <span class="prix">${produit.prix} FCA</span>
+          <button onclick="ajouterAuPanier(${produit.id})" class="btn-ajouter">Ajouter au panier</button>
+        </div>
+      </article>
+    `;
+
+    conteneurProduits.innerHTML += carte;
+  });
+}
+
+
+afficherProduits();
+  // Fonction d'ajout au panier au clic sur le bouton
+function ajouterAuPanier(idProduit) {
+  // 1. Récupérer le panier enregistré dans le localStorage (ou créer un tableau vide)
+  let panier = JSON.parse(localStorage.getItem('panier')) || [];
+
+  // 2. Retrouver l'article dans votre tableau "enfants"
+  const produitTrouve = enfants.find(article => article.id === idProduit);
+
+  if (!produitTrouve) {
+    console.error("Produit introuvable dans le tableau enfants");
+    return;
+  }
+
+  // 3. Vérifier si l'article est déjà dans le panier
+  const produitExistant = panier.find(item => item.id === idProduit);
+
+  if (produitExistant) {
+    // Si oui, on augmente la quantité
+    produitExistant.quantite += 1;
+  } else {
+    // Sinon, on copie les données du produit et on ajoute quantite: 1
+    panier.push({
+      id: produitTrouve.id,
+      nom: produitTrouve.nom,
+      prix: produitTrouve.prix,
+      image: produitTrouve.image,
+      quantite: 1
+    });
+  }
+
+  // 4. Sauvegarder dans le localStorage
+  localStorage.setItem('panier', JSON.stringify(panier));
+
+  alert(`${produitTrouve.nom} a été ajouté au panier !`);
+}
+  
+
+//button burger
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', () => {
+      // Bascule la classe 'active' pour afficher ou masquer le menu
+      navLinks.classList.toggle('active');
+    });
+  }
+});
+    </script>
+</body>
+</html>
