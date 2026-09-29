@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Shop - Chargement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Écran de chargement avec vidéo -->
+  <div id="loader-wrapper">
+    <video id="loader-video" autoplay muted playsinline>
+      <!-- Remplacez le chemin par le nom exact de votre fichier vidéo MP4 -->
+      <source src="Black Elegant Woman Fashion Brand Logo.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+  </div>
+
+  <script >
+    // URL de la page d'accueil vers laquelle rediriger
+const HOME_PAGE_URL = "Accueil.html";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("loader-video");
+  const loader = document.getElementById("loader-wrapper");
+
+  // Détecte quand la vidéo se termine
+  video.addEventListener("ended", () => {
+    // 1. Applique l'effet de fondu sortant
+    loader.classList.add("fade-out");
+
+    // 2. Redirige vers la page d'accueil à la fin de la transition CSS (800ms)
+    setTimeout(() => {
+      window.location.href = HOME_PAGE_URL;
+    }, 800);
+  });
+
+  // Sécurité (au cas où la vidéo met du temps à se lancer)
+  video.play().catch((error) => {
+    console.log("Erreur de lecture vidéo :", error);
+  });
+});
+  </script>
+</body>
+</html>
