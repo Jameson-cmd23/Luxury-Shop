@@ -91,7 +91,7 @@ afficherPanier();
           if (panier.length === 0) return;
 
           // Replacez ce numéro par votre numéro WhatsApp (avec l'indicatif pays, ex: 242061234567 sans le +)
-          const numeroWhatsApp = "242065678203"; 
+          const numeroWhatsApp = "242056875142"; 
 
           let message = "Bonjour Luxury Shop, je souhaite passer la commande suivante :\n\n";
           let totalGeneral = 0;
@@ -114,7 +114,7 @@ afficherPanier();
 
           // Encodage du texte pour URL
           const messageEncode = encodeURIComponent(message);
-          const urlWhatsApp = `https://wa.me/${242065678203}?text=${messageEncode}`;
+          const urlWhatsApp = `https://wa.me/${242056875142}?text=${messageEncode}`;
 
           // Redirection vers WhatsApp
           window.open(urlWhatsApp);

@@ -10,179 +10,155 @@ body{
     
     
 }
-
-/*navbar style*/
-
 /* ==========================================
-   STYLE DE LA NAVBAR RESPONSIVE
+   STYLE GÉNÉRAL & DESKTOP / TABLETTE
    ========================================== */
-
-/* Navbar générale (PC & Tablettes) */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1a1a1a;
-  padding: 15px 30px;
-  position: relative;
-
-
-  
-    animation-name: nav;
-    animation-duration: 7s;
-    animation-timing-function: ease;
-    animation-delay: 8ms;
-    animation-iteration-count: 1;
-    animation-direction: alternate; 
-    
-    -webkit-animation-name: nav;
-    -webkit-animation-duration: 7s;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-delay: 8ms;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-direction: alternate;   
-   
-    -moz-animation-name: nav;
-    -moz-animation-duration: 7s;
-    -moz-animation-timing-function: ease;
-    -moz-animation-delay: 8ms;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-direction: alternate;
-
-    -o-animation-name: nav;
-    -o-animation-duration: 7s;
-    -o-animation-timing-function: ease;
-    -o-animation-delay: 8ms;
-    -o-animation-iteration-count: 1;
-    -o-animation-direction: alternate;
-}
-
-.navbar .logo a {
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-decoration: none;
-
-
-  
-}
-
-@-moz-keyframes nav{
-   0%{
-    transform: translateX(200px);
-    opacity: 0;
-   }
-    
-    100%{
-    transform: translateX(0);
-    opacity: 1;
-   }
-}
-@keyframes nav{
-    0%{
-    transform: translateX(200px);
-    opacity: 0;
-   }
-
-    100%{
-    transform: translateX(0);
-    opacity: 1;
-   }
-  
-}
-@-webkit-keyframes nav{
-    0%{
-    transform: translateX(200px);
-    opacity: 0;
-   }
-    100%{
-    transform: translateX(0);
-    opacity: 1;
-   }
-}
-@-o-keyframes nav{
-    0%{
-    transform: translateX(200px);
-    opacity: 0;
-   }
-
-    100%{
-    transform: translateX(0);
-    opacity: 1;
-   }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 
-/* Liste des liens */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-
-}
-
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #e67e22; /* Couleur d'accentuation */
-}
-
-/* Bouton Burger (Caché sur ordinateur) */
-.burger-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* ==========================================
-   VERSION MOBILE (Écrans < 768px)
-   ========================================== */
-@media (max-width: 768px) {
-  .burger-btn {
-    display: block; /* Affiche le bouton burger */
-  }
-
-  .nav-links {
-    display: none; /* Cache le menu par défaut */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;
-    padding: 20px 0;
-    gap: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
     z-index: 1000;
-  }
-
-  /* Classe ajoutée en JS pour afficher le menu */
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    text-align: center;
-    width: 100%;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 10px 0;
-    font-size: 1.1rem;
-  }
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1877f2; /* Bleu style Facebook / Elegant */
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #65676b;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Masquer les icônes uniquement sur PC/Tablette si vous souhaitez un style texte classique */
+.nav-links li a i {
+    display: none;
+}
+
+.nav-links li a:hover {
+    background-color: #f0f2f5;
+    color: #1877f2;
+}
+
+/* Optionnel : cacher le bouton burger car inutile avec le design Facebook mobile */
+.burger-btn {
+    display: none;
+}
+
+/* ==========================================
+   STYLE MOBILE (Navigation en bas style Facebook) : < 768px
+   ========================================== */
+@media screen and (max-width: 767px) {
+    /* Conserver l'en-tête/logo en haut */
+    header {
+        position: static;
+    }
+
+    .navbar {
+        display: block;
+        padding: 0;
+    }
+
+    .logo {
+        padding: 12px 16px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #e4e6eb;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .logo a {
+        font-size: 20px;
+    }
+
+    /* Fixer la barre de navigation tout en bas de l'écran */
+    .nav-links {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-top: 1px solid #e4e6eb;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+        gap: 0;
+        padding-bottom: max(0px, env(safe-area-inset-bottom)); /* Support pour les encoches iPhone/Android */
+    }
+
+    .nav-links li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0;
+        font-size: 10px;
+        color: #65676b;
+        border-radius: 0;
+        border-bottom: none;
+    }
+
+    /* Afficher les icônes sur mobile */
+    .nav-links li a i {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+
+    /* Style de l'onglet sélectionné / actif */
+    .nav-links li.active a,
+    .nav-links li a:hover {
+        color: #1877f2;
+        background-color: transparent;
+    }
+
+    /* Ajouter une marge en bas du corps de la page pour éviter que la navbar ne masque le contenu */
+    body {
+        padding-bottom: 65px;
+    }
+}
+
 /*style panier*/
 
 #Cad a{
