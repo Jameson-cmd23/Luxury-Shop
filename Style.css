@@ -5,7 +5,35 @@ body{
     background: -webkit-linear-gradient(Left,#1a1a1a,#B3945B);
     background: -o-linear-gradient(Right,#1a1a1a,#B3945B);
     background: linear-gradient(Right,#1a1a1a,#B3945B);
-    padding-top: 70px;  
+    padding-top: 70px; 
+
+    animation-name: bd;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-delay: 8ms;
+    animation-iteration-count: 1;
+    animation-direction: alternate; 
+    
+    -webkit-animation-name: bd;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 8ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;   
+   
+    -moz-animation-name: bd;
+    -moz-animation-duration: 4s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-delay: 8ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: alternate;
+
+    -o-animation-name: bd;
+    -o-animation-duration: 4s;
+    -o-animation-timing-function: ease;
+    -o-animation-delay: 8ms;
+    -o-animation-iteration-count: 1;
+    -o-animation-direction: alternate;
     
     
     
@@ -22,7 +50,7 @@ body{
 
 
 header {
-    background-color: #ffffff;
+    background-color:#1a1a1a;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -41,7 +69,7 @@ header {
 .logo a {
     font-size: 24px;
     font-weight: bold;
-    color: #1877f2; /* Bleu style Facebook / Elegant */
+    color: #B3945B; /* Bleu style Facebook / Elegant */
     text-decoration: none;
 }
 
@@ -59,7 +87,7 @@ header {
     font-weight: 600;
     padding: 8px 12px;
     border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -112,7 +140,7 @@ header {
         bottom: 0;
         left: 0;
         width: 100vw; /* Occupe 100% de la largeur de l'écran */
-        background-color: #ffffff;
+        background-color:white;
         border-top: 1px solid #e4e6eb;
         box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
         z-index: 1000;
@@ -262,35 +290,9 @@ footer i:hover{
     grid-template-columns: repeat(2,1fr);
     gap: 15px;
 
-    animation-name: img;
-    animation-duration: 7s;
-    animation-timing-function: ease;
-    animation-delay: 8ms;
-    animation-iteration-count: 3;
-    animation-direction: alternate; 
     
-    -webkit-animation-name: img;
-    -webkit-animation-duration: 7s;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-delay: 8ms;
-    -webkit-animation-iteration-count: 3;
-    -webkit-animation-direction: alternate;   
-   
-    -moz-animation-name: img;
-    -moz-animation-duration: 7s;
-    -moz-animation-timing-function: ease;
-    -moz-animation-delay: 8ms;
-    -moz-animation-iteration-count: 3;
-    -moz-animation-direction: alternate;
-
-    -o-animation-name: img;
-    -o-animation-duration: 7s;
-    -o-animation-timing-function: ease;
-    -o-animation-delay: 8ms;
-    -o-animation-iteration-count: 3;
-    -o-animation-direction: alternate;
 }
-@-moz-keyframes img{
+@-moz-keyframes bd{
    0%{
     transform: translateX(200px);
     opacity: 0;
@@ -301,7 +303,7 @@ footer i:hover{
     opacity: 1;
    }
 }
-@keyframes img{
+@keyframes bd{
     0%{
     transform: translateX(200px);
     opacity: 0;
@@ -313,7 +315,7 @@ footer i:hover{
    }
   
 }
-@-webkit-keyframes img{
+@-webkit-keyframes bd{
     0%{
     transform: translateX(200px);
     opacity: 0;
@@ -323,7 +325,7 @@ footer i:hover{
     opacity: 1;
    }
 }
-@-o-keyframes img{
+@-o-keyframes bd{
     0%{
     transform: translateX(200px);
     opacity: 0;
@@ -363,78 +365,9 @@ footer i:hover{
     flex-direction: column; /* Force le bouton à se placer sous le texte <h3> */
     align-items: center;  /* Centre horizontalement le titre et le bouton */
     text-align: center;   /* Centre le texte du titre <h3> */
-    margin-bottom: 20px;
+    margin-bottom: 20px;   
+}
 
-    animation-name: infos;
-    animation-duration: 7s;
-    animation-timing-function: ease;
-    animation-delay: 9mss;
-    animation-iteration-count: 1;
-    animation-direction: alternate; 
-    
-    -webkit-animation-name: infos;
-    -webkit-animation-duration: 7s;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-delay: 9ms;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-direction: alternate;   
-   
-    -moz-animation-name: infos;
-    -moz-animation-duration: 7s;
-    -moz-animation-timing-function: ease;
-    -moz-animation-delay: 9ms;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-direction: alternate;
-
-    -o-animation-name: infos;
-    -o-animation-duration: 7s;
-    -o-animation-timing-function: ease;
-    -o-animation-delay: 9ms;
-    -o-animation-iteration-count: 1;
-    -o-animation-direction: alternate;
-   
-}
-@-moz-keyframes infos{
-   0%{
-    transform: translateY(200px);
-    opacity: 0;
-   }
-    100%{
-    transform: translateY(0);
-    opacity: 1;
-   }
-}
-@keyframes infos{
-    0%{
-    transform: translateY(200px);
-    opacity: 0;
-   }
-    100%{
-    transform: translateY(0);
-    opacity: 1;
-   }
-  
-}
-@-webkit-keyframes infos{
-    0%{
-    transform: translateY(200px);
-    opacity: 0;
-   }
-    100%{
-    transform: translateY(0);
-    opacity: 1;
-   }
-}
-@-o-keyframes infos{
-    0%{
-    transform: translateY(200px);
-    opacity: 0;
-   }
-    100%{
-    transform: translateY(-0);
-    opacity: 1;
-   }
-}
 .infos h3{
     transition: transform 0.3s ease;
 
@@ -482,8 +415,8 @@ footer i:hover{
      transition: transform 0.5s ease;
 }
 #A1 p:hover,#A2 p:hover{
-    transform: translateX(30px);
-    transform: scaleY(1.1);
+    transform: translateX(10px);
+   
 }
 #fos{
     margin-bottom: 80px;
@@ -552,35 +485,9 @@ header h1{
         h1{
             text-align: center;
             color: #333;
-            
-        animation-name: img;
-        animation-duration: 7s;
-        animation-timing-function: ease;
-        animation-delay: 8ms;
-        animation-iteration-count: 1;
-        animation-direction: alternate; 
+        } 
     
-        -webkit-animation-name: img;
-        -webkit-animation-duration: 7s;
-        -webkit-animation-timing-function: ease;
-        -webkit-animation-delay: 8ms;
-        -webkit-animation-iteration-count: 1;
-        -webkit-animation-direction: alternate;   
-   
-        -moz-animation-name: img;
-        -moz-animation-duration: 7s;
-        -moz-animation-timing-function: ease;
-        -moz-animation-delay: 8ms;
-        -moz-animation-iteration-count: 1;
-        -moz-animation-direction: alternate;
-
-        -o-animation-name: img;
-        -o-animation-duration: 7s;
-        -o-animation-timing-function: ease;
-        -o-animation-delay: 8ms;
-        -o-animation-iteration-count: 1;
-        -o-animation-direction: altern
-        }
+       
         /*grilles de produits respoonsive*/
         .grille-enfants{
             display: grid;
@@ -607,81 +514,7 @@ header h1{
             height: 500px;
             object-fit: cover;
             display: block;
-
-        animation-name: img;
-        animation-duration: 7s;
-        animation-timing-function: ease;
-        animation-delay: 8ms;
-        animation-iteration-count: 1;
-        animation-direction: alternate; 
-    
-        -webkit-animation-name: img;
-        -webkit-animation-duration: 7s;
-        -webkit-animation-timing-function: ease;
-        -webkit-animation-delay: 8ms;
-        -webkit-animation-iteration-count: 1;
-        -webkit-animation-direction: alternate;   
-   
-        -moz-animation-name: img;
-        -moz-animation-duration: 7s;
-        -moz-animation-timing-function: ease;
-        -moz-animation-delay: 8ms;
-        -moz-animation-iteration-count: 1;
-        -moz-animation-direction: alternate;
-
-        -o-animation-name: img;
-        -o-animation-duration: 7s;
-        -o-animation-timing-function: ease;
-        -o-animation-delay: 8ms;
-        -o-animation-iteration-count: 1;
-        -o-animation-direction: alternate;
         }
-
-    @-moz-keyframes img{
-        0%{
-            transform: translateX(200px);
-            opacity: 0;
-        }
-    
-         100%{
-            transform: translateX(0);
-             opacity: 1;
-         }
-    }
-    @keyframes img{
-        0%{
-         transform: translateX(200px);
-         opacity: 0;
-        }
-
-        100%{
-            transform: translateX(0);
-             opacity: 1;
-        }
-  
-    }
-    @-webkit-keyframes img{
-        0%{
-            transform: translateX(200px);
-            opacity: 0;
-        }
-        100%{
-            transform: translateX(0);
-             opacity: 1;
-        }
-    }
-    @-o-keyframes img{
-        0%{
-            transform: translateX(200px);
-            opacity: 0;
-        }
-
-        100%{
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
         .contenu-enfants{
             padding: 15px;
             display: flex;

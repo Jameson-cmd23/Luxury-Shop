@@ -5,31 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chaussures</title>
      <link rel="stylesheet" href="Style.css">
-   <script src="Shop.js"></script>    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  
 </head>
 </head>
 <body>
-     <header>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="Accueil.html">Luxury Shop</a>
-        </div>
+    <!-- Font Awesome pour les icônes style Facebook -->
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- l logo-->
+            <div class="logo">
+                <a href="Accueil.html">Luxury Shop</a>
+            </div>
 
-        <!-- Bouton Menu Burger pour mobile -->
-        <button class="burger-btn" id="burger-btn" aria-label="Menu">
-            ☰
-        </button>
+            <!-- L fb style -->
+            <ul class="nav-links" id="nav-links">
+                <li class="active">
+                    <a href="Accueil.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Chaussures.html">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                        <span>Chaussures</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Vêtements.html">
+                        <i class="fa-solid fa-shirt"></i>
+                        <span>Vêtements</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Interieur.html">
+                        <i class="fa-solid fa-couch"></i>
+                        <span>Intérieur/accessoires</span>
+                    </a>
+                </li>
+                <li id="Cad">
+                    <a href="Panier.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Panier</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- Liste des liens de navigation -->
-        <ul class="nav-links" id="nav-links">
-            <li><a href="Accueil.html">Accueil</a></li>
-            <li><a href="Chaussures.html">Chaussures</a></li>
-            <li><a href="Vêtements.html">Vêtements</a></li>
-            <li><a href="Interieur.html">Intérieur/Accesoires</a></li>
-            <li id="Cad"><a href="Panier.html">🛒 Panier</a></li>
-        </ul>
-    </nav>
-</header>
     <main class="conteneur">
         <h1>Nos Chaussures</h1>
         <div id="liste-produits" class="grille-enfants">
