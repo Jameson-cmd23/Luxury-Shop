@@ -79,12 +79,10 @@ header {
 .burger-btn {
     display: none;
 }
-
 /* ==========================================
-   STYLE MOBILE (Navigation en bas style Facebook) : < 768px
+   STYLE MOBILE (Style Facebook espacé sur 100% de la largeur) : < 768px
    ========================================== */
 @media screen and (max-width: 767px) {
-    /* Conserver l'en-tête/logo en haut */
     header {
         position: static;
     }
@@ -107,23 +105,28 @@ header {
         font-size: 20px;
     }
 
-    /* Fixer la barre de navigation tout en bas de l'écran */
+    /* Barre de navigation fixée en bas occupying toute la largeur */
     .nav-links {
         display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
-        width: 100%;
+        width: 100vw; /* Occupe 100% de la largeur de l'écran */
         background-color: #ffffff;
         border-top: 1px solid #e4e6eb;
         box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
         z-index: 1000;
         gap: 0;
-        padding-bottom: max(0px, env(safe-area-inset-bottom)); /* Support pour les encoches iPhone/Android */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        padding-bottom: max(0px, env(safe-area-inset-bottom)); /* Support encoche iPhone/Android */
     }
 
+    /* Chaque onglet prend une part rigoureusement égale de l'écran */
     .nav-links li {
-        flex: 1;
+        flex: 1 1 0px; /* Répartit équitablement l'espace entre tous les onglets */
+        min-width: 0;   /* Empêche les débordements */
         text-align: center;
     }
 
@@ -132,14 +135,17 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: 100%;
         padding: 8px 0;
         font-size: 10px;
         color: #65676b;
         border-radius: 0;
         border-bottom: none;
+        text-decoration: none;
     }
 
-    /* Afficher les icônes sur mobile */
+    /* Icônes */
     .nav-links li a i {
         display: block;
         font-size: 20px;
@@ -153,7 +159,7 @@ header {
         background-color: transparent;
     }
 
-    /* Ajouter une marge en bas du corps de la page pour éviter que la navbar ne masque le contenu */
+    /* Marge sous la page pour ne pas masquer le contenu */
     body {
         padding-bottom: 65px;
     }
