@@ -511,7 +511,7 @@ header h1{
         /* Stylisation image*/
         .carte-enfants img{
             width: 100%;
-            height: 500px;
+            height: 700px;
             object-fit: cover;
             display: block;
         }
