@@ -6,6 +6,35 @@
     <title>Intérieur</title>
      <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <style>
+      /* Style des cartes */
+      .carte-enfants {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+            background-color: #1a1a1a;
+          border-radius: 8px;
+          overflow: hidden;
+          padding: 10px;
+      }
+
+      /* Empêcher l'image d'être zoomée ou coupée */
+      .carte-enfants img {
+          width: 100%;
+          height: 220px;            /* Hauteur fixe pour que toutes les cartes soient uniformes */
+          object-fit: contain;      /* Affiche toute l'image sans zoom ni rognage */
+          background-color: #f9f9f9;/* Fond léger pour combler les espaces vides si l'image est étroite */
+          border-radius: 4px;
+      }
+
+      .contenu-enfants {
+          text-align: center;
+          margin-top: 10px;
+          width: 100%;
+      }
+    </style>
 </head>
 <body>
      <header>
@@ -137,8 +166,31 @@ const interieur=[
         alt:"image de sac"
     },
     
-    {
+     {
         id:9,
+        nom:"Sac homme",
+        prix:8000,
+        image:"/Images/Linges/S1.jpeg",
+        alt:"image de sac"
+    },
+
+     {
+        id:10,
+        nom:"Sac homme",
+        prix:8000,
+        image:"/Images/Linges/S2.jpeg",
+        alt:"image de sac"
+    },
+
+     {
+        id:11,
+        nom:"Sac homme",
+        prix:8000,
+        image:"/Images/Linges/S3.jpeg",
+        alt:"image de sac"
+    },
+    {
+        id:12,
         nom:"Chapeau",
         prix:7000,
         image:"/Images/Chapeaux/C1.jpeg",
@@ -147,7 +199,7 @@ const interieur=[
 
     
     {
-        id:10,
+        id:13,
         nom:"Chapeau",
         prix:7000,
         image:"/Images/Chapeaux/C2.jpeg",
@@ -156,7 +208,7 @@ const interieur=[
 
     
     {
-        id:11,
+        id:14,
         nom:"Chapeau",
         prix:7000,
         image:"/Images/Chapeaux/C3.jpeg",
@@ -164,7 +216,7 @@ const interieur=[
     },
 
     {
-        id:12,
+        id:15,
         nom:"Rideau",
         prix:11000,
         image:"/Images/Linges/R1.jpeg",
@@ -172,7 +224,7 @@ const interieur=[
     },
 
     {
-        id:13,
+        id:16,
         nom:"Rideau",
         prix:11000,
         image:"/Images/Linges/R2.jpeg",
@@ -180,7 +232,7 @@ const interieur=[
     },
 
     {
-        id:14,
+        id:17,
         nom:"Rideau",
         prix:11000,
         image:"/Images/Linges/R3.jpeg",
@@ -188,7 +240,7 @@ const interieur=[
     },
 
     {
-        id:15,
+        id:18,
         nom:"Rideau",
         prix:11000,
         image:"/Images/Linges/R3.jpeg",
@@ -205,7 +257,7 @@ const interieur=[
   interieur.forEach(produit => {
     const carte = `
       <article class="carte-enfants">
-        <img src="${produit.image}" alt="${produit.alt}" width="600px">
+        <img id="img-${produit.id}" src="${produit.image}" alt="${produit.alt}" loading="lazy">
         <div class="contenu-enfants">
           <h2 class="nom-enfants">${produit.nom}</h2>
           <span class="prix">${produit.prix} FCA</span>

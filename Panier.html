@@ -1,26 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panier</title>
+    <title>Panier - Luxury Shop</title>
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-      
     
+    <style>
+        /* Conteneur principal de la page Panier */
+        .panier-hero {
+            position: relative;
+            width: 100%;
+            min-height: calc(100vh - 70px);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Piste du carrousel d'arrière-plan */
+        .carousel-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400%; /* 4 images = 400% */
+            height: 100%;
+            display: flex;
+            animation: defilementContinu 20s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .carousel-bg img {
+            width: 25%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55); /* Assombrit le fond pour une lisibilité maximale */
+        }
+
+        /* Animation Keyframes pour le défilement continu */
+        @keyframes defilementContinu {
+            0% { transform: translateX(0%); }
+            20% { transform: translateX(0%); }
+            25% { transform: translateX(-25%); }
+            45% { transform: translateX(-25%); }
+            50% { transform: translateX(-50%); }
+            70% { transform: translateX(-50%); }
+            75% { transform: translateX(-75%); }
+            95% { transform: translateX(-75%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* Conteneur principal du panier superposé */
+        .panier-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.65); /* Overlay sombre transparent */
+            backdrop-filter: blur(8px); /* Effet verre dépoli */
+            border-radius: 16px;
+            padding: 30px;
+            color: #ffffff;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .panier-container h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        /* Style des éléments du panier */
+        .item-panier {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .item-panier img {
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .item-panier h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            flex: 1 1 150px;
+        }
+
+        .item-panier p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .item-panier button {
+            background-color: #ff4d4d;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .item-panier button:hover {
+            background-color: #cc0000;
+        }
+
+        .total-section {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: right;
+            margin: 25px 0 15px 0;
+            color: #4cd137;
+        }
+
+        /* Bouton WhatsApp */
+        .zone-commande {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        #btn-whatsapp:hover {
+            background-color: #1ebe57;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
 <body>
     <header>
         <nav class="navbar">
-            <!-- l logo-->
+            <!-- Logo -->
             <div class="logo">
                 <a href="Accueil.html">Luxury Shop</a>
             </div>
 
-            <!-- L fb style -->
+            <!-- Liens de navigation -->
             <ul class="nav-links" id="nav-links">
-                <li class="active">
+                <li>
                     <a href="Accueil.html">
                         <i class="fa-solid fa-house"></i>
                         <span>Accueil</span>
@@ -44,7 +187,7 @@
                         <span>Accessoires</span>
                     </a>
                 </li>
-                <li id="Cad">
+                <li id="Cad" class="active">
                     <a href="Panier.html">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span>Panier</span>
@@ -53,111 +196,125 @@
             </ul>
         </nav>
     </header>
-        <main>
-        <h2>Votre Panier</h2>
-        <div id="contenu-panier"></div>
-        <p>Total : <span id="total">0</span> CFA</p>
 
-        <!-- Bt WhatsApp -->
-        <div class="zone-commande">
-            <button id="btn-whatsapp" onclick="commanderWhatsApp()">
-                Commander via WhatsApp 📱
-            </button>
+    <main class="panier-hero">
+        
+        <div class="carousel-bg">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&auto=format&fit=crop&q=80" alt="Shopping d'achats" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&auto=format&fit=crop&q=80" alt="Boutique en ligne" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&auto=format&fit=crop&q=80" alt="Sacs de shopping" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&auto=format&fit=crop&q=80" alt="Magasin de luxe" loading="lazy">
+        </div>
+
+
+        <div class="panier-container">
+            <h2><i class="fa-solid fa-cart-shopping"></i> Votre Panier</h2>
+            <div id="contenu-panier"></div>
+            <p class="total-section">Total : <span id="total">0</span> CFA</p>
+
+            
+            <div class="zone-commande">
+                <button id="btn-whatsapp" onclick="commanderWhatsApp()">
+                    Commander via WhatsApp 📱
+                </button>
+            </div>
         </div>
     </main>
-        <script>
-          // Récupération des données sauvegardées depuis le localStorage
-let panier = JSON.parse(localStorage.getItem('panier')) || [];
-const conteneurPanier = document.getElementById('contenu-panier');
-const totalHTML = document.getElementById('total');
 
-function afficherPanier() {
-  if (panier.length === 0) {
-    conteneurPanier.innerHTML = "<p>Votre panier est vide.</p>";
-    if (totalHTML) totalHTML.textContent = "0";
-    return;
-  }
+    <script>
+        // Récupération des données sauvegardées depuis le localStorage
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        const conteneurPanier = document.getElementById('contenu-panier');
+        const totalHTML = document.getElementById('total');
 
-  conteneurPanier.innerHTML = '';
-  let totalGeneral = 0;
+        function afficherPanier() {
+            if (panier.length === 0) {
+                conteneurPanier.innerHTML = "<p style='text-align: center; font-size: 1.1rem;'>Votre panier est actuellement vide.</p>";
+                if (totalHTML) totalHTML.textContent = "0";
+                return;
+            }
 
-  panier.forEach((item, index) => {
-    const totalProduit = item.prix * item.quantite;
-    totalGeneral += totalProduit;
+            conteneurPanier.innerHTML = '';
+            let totalGeneral = 0;
 
-    conteneurPanier.innerHTML += `
-      <div class="item-panier">
-        <img src="${item.image}" alt="${item.nom}" width="80">
-        <h4>${item.nom}</h4>
-        <p>Prix unitaire : ${item.prix} CFA</p>
-        <p>Quantité : ${item.quantite}</p>
-        <p>Sous-total : ${totalProduit} CFA</p>
-        <button onclick="supprimerDuPanier(${index})">Supprimer</button>
-      </div>
-    `;
-  });
+            panier.forEach((item, index) => {
+                const totalProduit = item.prix * item.quantite;
+                totalGeneral += totalProduit;
 
-  if (totalHTML) {
-    totalHTML.textContent = totalGeneral;
-  }
-}
+                conteneurPanier.innerHTML += `
+                    <div class="item-panier">
+                        <img src="${item.image}" alt="${item.nom}" width="70" height="70">
+                        <div>
+                            <h4>${item.nom}</h4>
+                            <p>Prix unitaire : ${item.prix} CFA</p>
+                        </div>
+                        <div>
+                            <p>Qté : ${item.quantite}</p>
+                            <p><strong>Sous-total : ${totalProduit} CFA</strong></p>
+                        </div>
+                        <button onclick="supprimerDuPanier(${index})"><i class="fa-solid fa-trash"></i> Supprimer</button>
+                    </div>
+                `;
+            });
 
-// Fonction pour supprimer un article
-function supprimerDuPanier(index) {
-  panier.splice(index, 1);
-  localStorage.setItem('panier', JSON.stringify(panier));
-  afficherPanier();
-}
+            if (totalHTML) {
+                totalHTML.textContent = totalGeneral;
+            }
+        }
 
-afficherPanier();
+        // Fonction pour supprimer un article
+        function supprimerDuPanier(index) {
+            panier.splice(index, 1);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherPanier();
+        }
 
-// --- FONCTION ENVOI WHATSAPP ---
+        // --- FONCTION ENVOI WHATSAPP ---
         function commanderWhatsApp() {
-          if (panier.length === 0) return;
+            if (panier.length === 0) {
+                alert("Votre panier est vide !");
+                return;
+            }
 
-          // Replacez ce numéro par votre numéro WhatsApp (avec l'indicatif pays, ex: 242061234567 sans le +)
-          const numeroWhatsApp = "242056875142"; 
+            const numeroWhatsApp = "242056875142"; 
 
-          let message = "Bonjour Luxury Shop, je souhaite passer la commande suivante :\n\n";
-          let totalGeneral = 0;
-         
+            let message = "Bonjour Luxury Shop, je souhaite passer la commande suivante :\n\n";
+            let totalGeneral = 0;
 
-          panier.forEach((item, index) => {
-            // Génère l'URL complète de l'image pour que WhatsApp génère l'aperçu visuel
-           const urlImageComplete = window.location.origin + item.image;
-            const sousTotal = item.prix * item.quantite;
-            totalGeneral += sousTotal;
-            message += `${index + 1}. *${item.nom}*\n`;
-            message += `${urlImageComplete}\n`;
-            message += `   • Quantité : ${item.quantite}\n`;
-            message += `   • Prix : ${item.prix} CFA\n`;
-            message += `   • Sous-total : ${sousTotal} CFA\n\n`;
-          });
+            panier.forEach((item, index) => {
+                const urlImageComplete = window.location.origin + (item.image.startsWith('/') ? '' : '/') + item.image;
+                const sousTotal = item.prix * item.quantite;
+                totalGeneral += sousTotal;
+                message += `${index + 1}. *${item.nom}*\n`;
+                message += `   • Aperçu : ${urlImageComplete}\n`;
+                message += `   • Quantité : ${item.quantite}\n`;
+                message += `   • Prix : ${item.prix} CFA\n`;
+                message += `   • Sous-total : ${sousTotal} CFA\n\n`;
+            });
 
-          message += `*TOTAL COMMANDE : ${totalGeneral} CFA*`;
-          
+            message += `*TOTAL COMMANDE : ${totalGeneral} CFA*`;
 
-          // Encodage du texte pour URL
-          const messageEncode = encodeURIComponent(message);
-          const urlWhatsApp = `https://wa.me/${242056875142}?text=${messageEncode}`;
+            // Encodage du texte pour URL
+            const messageEncode = encodeURIComponent(message);
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${messageEncode}`;
 
-          // Redirection vers WhatsApp
-          window.open(urlWhatsApp);
+            // Redirection vers WhatsApp
+            window.open(urlWhatsApp, '_blank');
         }
 
         afficherPanier();
+
+        // Gestion du menu Burger s'il est présent
         document.addEventListener('DOMContentLoaded', () => {
-  const burgerBtn = document.getElementById('burger-btn');
-  const navLinks = document.getElementById('nav-links');
+            const burgerBtn = document.getElementById('burger-btn');
+            const navLinks = document.getElementById('nav-links');
 
-  if (burgerBtn && navLinks) {
-    burgerBtn.addEventListener('click', () => {
-      // Bascule la classe 'active' pour afficher ou masquer le menu
-      navLinks.classList.toggle('active');
-    });
-  }
-});
-
-        </script>
+            if (burgerBtn && navLinks) {
+                burgerBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -6,10 +6,12 @@
     <title>Chaussures</title>
      <link rel="stylesheet" href="Style.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  
-</head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    </head>
 </head>
 <body>
-    <!-- Font Awesome pour les icônes style Facebook -->
+
     
 </head>
 <body>
@@ -372,7 +374,7 @@
   enfants.forEach(produit => {
     const carte = `
       <article class="carte-enfants">
-        <img src="${produit.image}" alt="${produit.alt}">
+        <img src="${produit.image}" alt="${produit.alt}" loading="lazy">
         <div class="contenu-enfants">
           <h2 class="nom-enfants">${produit.nom}</h2>
           <span class="prix">${produit.prix} FCA</span>
