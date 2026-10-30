@@ -3,86 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxury Shop - Chargement</title>
+
+  <!-- SEO : à personnaliser -->
+  <title>Luxury Shop – Boutique de luxe en ligne</title>
+  <meta name="description" content="Luxury Shop : découvrez notre sélection de produits de luxe. [Décrivez en une phrase ce que vous vendez].">
+  <link rel="canonical" href="https://luxury-sho.netlify.app/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Aperçu lors d'un partage (WhatsApp, Facebook...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Luxury Shop – Boutique de luxe en ligne">
+  <meta property="og:description" content="Découvrez notre sélection de produits de luxe.">
+  <meta property="og:url" content="https://luxury-sho.netlify.app/">
+
+  <!-- Vérification Google Search Console : collez ici votre balise -->
+  <meta name="google-site-verification" content="mYH-qrvNEPV042vPLGKFr7zAmlIHzSn2f3uTBCCBUh0" />
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { background-color: #000; overflow: hidden; }
+
+    #loader-wrapper {
+      position: fixed;
+      inset: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    #loader-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* 'cover' pour remplir l'écran sans bandes noires */
+    }
+
+    .fade-out { opacity: 0; visibility: hidden; }
+
+    /* Bouton pour passer l'intro */
+    #skip-link {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 8px 16px;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    #skip-link:hover { background: rgba(255, 255, 255, 0.15); }
+
+    /* Contenu lisible par les moteurs de recherche et lecteurs d'écran */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+  </style>
 </head>
-<style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #000000;
-  overflow: hidden;
-}
-
-/* Conteneur plein écran */
-#loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
-}
-
-/* La vidéo s'adapte à tout l'écran tout en conservant ses proportions */
-#loader-video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Utilisez 'cover' si vous voulez qu'elle remplisse tout l'écran sans bandes noires */
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/* Effet de disparition fluide */
-.fade-out {
-  opacity: 0;
-  visibility: hidden;
-}
-</style>
 <body>
+
+  <!-- Contenu indexable par Google -->
+  <main class="sr-only">
+    <h1>Luxury Shop – Boutique de luxe en ligne</h1>
+    <p>Bienvenue chez Luxury Shop. [Décrivez ici votre boutique : produits, valeurs, public visé.]</p>
+    <nav aria-label="Navigation principale">
+      <a href="Accueil.html">Accueil</a>
+      <!-- Ajoutez vos autres pages : -->
+      <!-- <a href="produits.html">Produits</a> -->
+      <!-- <a href="contact.html">Contact</a> -->
+    </nav>
+  </main>
 
   <!-- Écran de chargement avec vidéo -->
   <div id="loader-wrapper">
-    <video id="loader-video" autoplay muted playsinline>
-      <!-- Remplacez le chemin par le nom exact de votre fichier vidéo MP4 -->
-      <source src="Black Elegant Woman Fashion Brand Logo.mp4" type="video/mp4">
+    <video id="loader-video" autoplay muted playsinline preload="auto" aria-label="Présentation de Luxury Shop">
+      <!-- Renommez votre fichier sans espaces ni majuscules, ex. intro.mp4 -->
+      <source src="intro.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la lecture de vidéos.
     </video>
+    <a id="skip-link" href="Accueil.html">Passer l'intro</a>
   </div>
 
-  <script >
-    // URL de la page d'accueil vers laquelle rediriger
-const HOME_PAGE_URL = "Accueil.html";
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=Accueil.html">
+  </noscript>
 
-document.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("loader-video");
-  const loader = document.getElementById("loader-wrapper");
+  <script>
+    const HOME_PAGE_URL = "Accueil.html";
+    let redirected = false;
 
-  // Détecte quand la vidéo se termine
-  video.addEventListener("ended", () => {
-    // 1. Applique l'effet de fondu sortant
-    loader.classList.add("fade-out");
+    function goHome() {
+      if (redirected) return;
+      redirected = true;
+      document.getElementById("loader-wrapper").classList.add("fade-out");
+      setTimeout(() => { window.location.href = HOME_PAGE_URL; }, 800);
+    }
 
-    // 2. Redirige vers la page d'accueil à la fin de la transition CSS (800ms)
-    setTimeout(() => {
-      window.location.href = HOME_PAGE_URL;
-    }, 800);
-  });
+    document.addEventListener("DOMContentLoaded", () => {
+      const video = document.getElementById("loader-video");
 
-  // Sécurité (au cas où la vidéo met du temps à se lancer)
-  video.play().catch((error) => {
-    console.log("Erreur de lecture vidéo :", error);
-  });
-});
+      video.addEventListener("ended", goHome);
+
+      // Si la vidéo est introuvable ou échoue : on ne bloque pas le visiteur
+      video.addEventListener("error", goHome);
+      video.querySelector("source").addEventListener("error", goHome);
+
+      // Sécurité : redirection au bout de 15 s maximum
+      setTimeout(goHome, 15000);
+
+      video.play().catch(() => goHome());
+    });
   </script>
 </body>
 </html>

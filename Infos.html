@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infos</title>
+    <title>À propos et contact – Luxury Shop, boutique à Ouesso (Congo)</title>
+    <meta name="description" content="Luxury Shop, boutique d'habillement et de décoration à Ouesso, République du Congo. Livraison dans tout le pays. Horaires, téléphone, WhatsApp et e-mail.">
+    <link rel="canonical" href="https://luxury-sho.netlify.app/Infos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="À propos et contact – Luxury Shop">
+    <meta property="og:description" content="Boutique d'habillement et de décoration à Ouesso. Livraison partout en République du Congo.">
+    <meta property="og:url" content="https://luxury-sho.netlify.app/Infos.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "name": "Luxury Shop",
+      "url": "https://luxury-sho.netlify.app/",
+      "description": "Boutique d'habillement pour hommes, femmes et enfants, et de décoration d'intérieur. Livraison partout en République du Congo.",
+      "telephone": "+242065678203",
+      "email": "luxuryshopluxuryshop2@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ouesso",
+        "addressCountry": "CG"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "16:00" }
+      ],
+      "sameAs": ["https://www.tiktok.com/@nzikou142"]
+    }
+    </script>
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -68,6 +95,9 @@
             text-align: center;
             cursor: pointer;
             color: white;
+            background-color: #1877f2;
+            text-decoration: none;
+            width: fit-content;
             border: none;
             border-radius: 6px;
             font-weight: bold;
@@ -157,25 +187,25 @@
             <article id="A2">
                 <h2>Ce que Nous Proposons</h2>
                 <p> 
-                    Luxury Shop possède un large catalogue de <a href="Vêtements.html">vêtements</a>, des draps et rideaux haut de gamme pour votre <a href="Interieur.html">intérieur</a>, ainsi que des <a href="Chaussures.html">chaussures</a> et <a href="Vêtements.html">chapeaux</a> pour compléter votre look.
+                    Luxury Shop possède un large catalogue de <a href="Vêtements.html">vêtements</a>, des draps et rideaux haut de gamme pour votre <a href="Interieur.html">intérieur</a>, ainsi que des <a href="Chaussures.html">chaussures</a> et <a href="Interieur.html">chapeaux</a> pour compléter votre look.
                 </p>
             </article>
         </div>
 
-        <button id="fos">Accueil</button>
+        <a id="fos" href="Accueil.html">Retour à l'accueil</a>
     </main>
 
     <footer>
         <div class="contenu-footer">
             <div class="suivi">
                 <h3>Suivez-nous sur</h3>
-                <a href="https://www.tiktok.com/@nzikou142" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@nzikou142" target="_blank" rel="noopener noreferrer" aria-label="Luxury Shop sur TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
 
             <div class="contact">
                 <h3>Contactez-nous</h3>
-                <a href="https://wa.me/242056875142?text=Bonjour Je souhaite collaborer avec vous"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:luxuryshopluxuryshop2@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/242056875142?text=Bonjour%2C%20je%20souhaite%20contacter%20Luxury%20Shop" target="_blank" rel="noopener noreferrer" aria-label="Nous contacter sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:luxuryshopluxuryshop2@gmail.com" aria-label="Nous écrire par e-mail"><i class="fas fa-envelope"></i></a>
                 <p>Téléphone: +242 06 567 8203</p>
             </div>
 
@@ -188,13 +218,5 @@
         </div>
     </footer>
 
-    <script>
-        var btn = document.getElementById('fos');
-        if (btn) {
-            btn.addEventListener('click', function() {
-                window.location.href = 'Accueil.html';
-            });
-        }
-    </script>
 </body>
 </html>

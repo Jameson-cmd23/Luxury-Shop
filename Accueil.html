@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Luxury Shop – Chaussures, vêtements et accessoires à prix abordables</title>
+    <meta name="description" content="Luxury Shop : chaussures, vêtements, sacs, chapeaux et rideaux de qualité à prix abordables. Commandez facilement via WhatsApp.">
+    <link rel="canonical" href="https://luxury-sho.netlify.app/Accueil.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luxury Shop – Chaussures, vêtements et accessoires">
+    <meta property="og:description" content="Des articles de qualité à des prix abordables. Commandez via WhatsApp.">
+    <meta property="og:url" content="https://luxury-sho.netlify.app/Accueil.html">
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="google-site-verification" content="mYH-qrvNEPV042vPLGKFr7zAmlIHzSn2f3uTBCCBUh0" />
@@ -65,14 +71,16 @@
             margin: 0 20px;
         }
 
-        .hero-content h3 {
+        .hero-content h1 {
             font-size: 1.5rem;
             line-height: 1.6;
             margin-bottom: 20px;
             font-weight: 500;
         }
 
-        .hero-content button {
+        .hero-content .btn-infos {
+            display: inline-block;
+            text-decoration: none;
             padding: 12px 28px;
             font-size: 1rem;
             background-color: #ffffff;
@@ -84,7 +92,7 @@
             transition: all 0.3s ease;
         }
 
-        .hero-content button:hover {
+        .hero-content .btn-infos:hover {
             background-color: #e0e0e0;
             transform: scale(1.05);
         }
@@ -136,29 +144,20 @@
 
     <main class="hero-banner">
         <div class="carousel-bg">
-            <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?w=1200&auto=format&fit=crop&q=80" alt="Vêtements">
-            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&auto=format&fit=crop&q=80" alt="Vêtements">
-            <img src="https://plus.unsplash.com/premium_photo-1676823553364-a3626c995214?w=1200&auto=format&fit=crop&q=80" alt="Intérieur">
-            <img src="https://plus.unsplash.com/premium_photo-1744312220261-200237b9166b?w=1200&auto=format&fit=crop&q=80" alt="Chaussures">
+            <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?w=1200&auto=format&fit=crop&q=80" alt="Vêtements tendance Luxury Shop">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&auto=format&fit=crop&q=80" alt="Vêtements pour femmes et hommes">
+            <img src="https://plus.unsplash.com/premium_photo-1676823553364-a3626c995214?w=1200&auto=format&fit=crop&q=80" alt="Accessoires et décoration d'intérieur">
+            <img src="https://plus.unsplash.com/premium_photo-1744312220261-200237b9166b?w=1200&auto=format&fit=crop&q=80" alt="Chaussures pour enfants, jeunes et dames">
         </div>
 
         <div class="hero-content">
-            <h3>
+            <h1>
                 Besoin d'articles d'habillement et de décoration ? <br>
                 Bienvenue chez <strong>Luxury Shop</strong> ! Ici, vous achetez des articles de qualité à des prix abordables.
-            </h3>
-            <button id="infos">Plus d'infos</button>
+            </h1>
+            <a class="btn-infos" href="Infos.html">Plus d'infos</a>
         </div>
     </main>
 
-    <script>
-        var btn = document.getElementById('infos');
-        if(btn) {
-            btn.addEventListener('click', infos);
-        }
-        function infos(){
-            window.open('Infos.html');
-        }
-    </script>
 </body>
 </html>
